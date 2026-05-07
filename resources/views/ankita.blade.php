@@ -21,43 +21,31 @@
 
                 <div class="card-body">
 
-                    <form action="/contactus" method="POST">
+                    <form action="/ankita" method="POST">
                         @csrf
 
                         <!-- Name -->
                         <div class="mb-3">
-                            <label class="form-label">Name</label>
+                            <label class="form-label">oe tero name k ho</label>
                             <input type="text" name="name" class="form-control border" placeholder="Enter your name">
-                            @error('name')
-                                <span style="color:red;">{{ $message }}</span>
-                            @enderror
                         </div>
 
                         <!-- Email -->
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
+                            <label class="form-label">tero email k xa vann form ma halnu pariyo</label>
                             <input type="email" name="email" class="form-control border" placeholder="Enter your email">
-                            @error('email')
-                                <span style="color:red;">{{ $message }}</span>
-                            @enderror
                         </div>
 
                         <!-- Subject -->
                         <div class="mb-3">
-                            <label class="form-label">Subject</label>
+                            <label class="form-label">k karan le aau timi</label>
                             <input type="text" name="subject" class="form-control border" placeholder="Enter subject">
-                            @error('subject')
-                                <span style="color:red;">{{ $message }}</span>
-                            @enderror
                         </div>
 
                         <!-- Message -->
                         <div class="mb-3">
-                            <label class="form-label">Message</label>
+                            <label class="form-label">message kk xa vann ta haldinxu mah</label>
                             <textarea name="message" rows="4" class="form-control border" placeholder="Write your message"></textarea>
-                            @error('message')
-                                <span style="color:red;">{{ $message }}</span>
-                            @enderror
                         </div>
 
                         <!-- Button -->
