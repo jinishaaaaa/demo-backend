@@ -60,6 +60,37 @@ class FrontendController extends Controller
             'semester' => 'required',
         ]);
        Register::create($request->all());
-      return view('success'); 
+      return redirect()->back()->with('success', 'Registration successful!');
+    }
+    public function show()
+    {
+        $datas = Register::get();
+        return view('show', compact('datas'));
+    }
+    public function submitForm3(Request $request)
+{
+        $request->validate([
+            
+            'fullname' => 'required|min:5',
+            'phone' => 'required|digits:10',
+            'email' => 'required|email',
+            'college' => 'required|min:5',
+            'course' => 'required|min:5',
+            'semester' => 'required',
+        ]);
+
+            
+       Register::create($request->all());
+      return redirect()->back()->with('success', 'Registration successful!');
+    }
+    public function edit(string $id)
+    {
+        $userdata = Register::find($id);
+        return view('edit', compact('userdata'));
+    }
+    public function update(Request $request, register $register)
+    {
+       $register->update($request->all());
+       return redirect()->to('/');
     }
 }

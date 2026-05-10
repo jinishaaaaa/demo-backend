@@ -31,7 +31,7 @@
                 <!-- Card Body -->
                 <div class="card-body p-4">
 
-                    <form action="/register" method="POST">
+                    <form action="{{ route('updatepage', $userdata->id) }}" method="POST">
                         @csrf
 
                         <!-- Full Name -->
@@ -40,7 +40,7 @@
                             <input type="text"
                                    name="fullname"
                                    class="form-control"
-                                   placeholder="Enter full name" value="{{ old('fullname') }}">
+                                   placeholder="Enter full name" value="{{ $userdata->fullname }}">
                                    @error('fullname')
                                 <span style="color:red;">{{ $message }}</span>
                             @enderror
@@ -52,7 +52,7 @@
                             <input type="text"
                                    name="phone"
                                    class="form-control"
-                                   placeholder="Enter phone number" value="{{ old('phone') }}">
+                                   placeholder="Enter phone number" value="{{ $userdata->phone }}">
                                    @error('phone')
                                 <span style="color:red;">{{ $message }}</span>
                             @enderror
@@ -64,7 +64,7 @@
                             <input type="email"
                                    name="email"
                                    class="form-control"
-                                   placeholder="Enter email" value="{{ old('email') }}">
+                                   placeholder="Enter email" value="{{ $userdata->email }}">
                                    @error('email')
                                 <span style="color:red;">{{ $message }}</span>
                             @enderror
@@ -76,7 +76,7 @@
                             <input type="text"
                                    name="college"
                                    class="form-control"
-                                   placeholder="Enter college name" value="{{ old('college') }}">
+                                   placeholder="Enter college name" value="{{ $userdata->college }}">
                                    @error('college')
                                 <span style="color:red;">{{ $message }}</span>
                             @enderror
@@ -88,7 +88,7 @@
                             <input type="text"
                                    name="course"
                                    class="form-control"
-                                   placeholder="Enter course name" value="{{ old('course') }}">
+                                   placeholder="Enter course name" value="{{ $userdata->course }}">
                             @error('course')
                                 <span style="color:red;">{{ $message }}</span>
                             @enderror
@@ -116,7 +116,7 @@
                         <!-- Submit Button -->
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">
-                                Register
+                                Update
                             </button>
                         </div>
 
