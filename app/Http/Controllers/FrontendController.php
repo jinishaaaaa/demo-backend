@@ -93,4 +93,9 @@ class FrontendController extends Controller
        $register->update($request->all());
        return redirect()->to('/');
     }
+    public function delete(register $register)
+    {
+        $register->delete();
+        return redirect()->route('show');
+    }
 }

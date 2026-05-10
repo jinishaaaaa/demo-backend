@@ -18,8 +18,10 @@ Route::post('/ankita', [FrontendController::class, 'submitForm']);
 Route::get('/register', [FrontendController::class, 'register']);
 Route::post('/register', [FrontendController::class, 'submitForm2']);
 
-Route::get('/show', [FrontendController::class, 'show']);
+Route::get('/show', [FrontendController::class, 'show'])->name('show');
 Route::post('/show', [FrontendController::class, 'submitForm3']);
 
 Route::get('/edit/{id}', [FrontendController::class, 'edit'])->name('editpage');
 Route::post('/update/{register}', [FrontendController::class, 'update'])->name('updatepage');
+
+Route::post('/delete/{register}', [FrontendController::class, 'delete'])->name('deletepage');
